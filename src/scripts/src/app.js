@@ -12,15 +12,15 @@ GScroll is a lightweight javascript tool to trigger a function when you scroll t
  * Check selector type
  * @param {Oject or Array} selector
  */
-// function GScroll(selector) {
-//   if (Array.isArray(selector)) {
-//     for (let i=0; i<selector.length; i++) {
-//       checkPoint(selector[i]);
-//     }
-//   } else {
-//     checkPoint(selector);
-//   }
-// }
+function GScroll(selector) {
+  if (Array.isArray(selector)) {
+    for (let i=0; i<selector.length; i++) {
+      checkPoint(selector[i]);
+    }
+  } else {
+    checkPoint(selector);
+  }
+}
 
 
 /**
