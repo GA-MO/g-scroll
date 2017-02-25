@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>GScroll</title>
+	<meta name="description" content="GScroll is a lightweight javascript tool to trigger a function when you scroll to a DOM.">
+	<meta property="og:image" content="https://s27.postimg.org/iza8forqn/ghover.jpg">
+	<link rel="stylesheet" type="text/css" href="styles/demo-layout.css">
+</head>
+<body>
+	<section class="section">
+		<div class="center">
+			<div class="title big">GScroll</div>
+			<p>GScroll is a lightweight javascript tool to trigger a function when you scroll to a DOM.</p>
+			<p><b>A Project By GAMO</b></p>
+			<a href="https://github.com/GA-MO/g-scroll/demo/demo.html" class="button">Demo</a>
+			<a href="https://github.com/GA-MO/g-scroll" class="button">Github</a>
+			<br>
+			<br>
+			<br>
+			<br>
+			<!-- 	CODE -->
+			<div class="container">
+				<div class="row columns-center">
+					<div class="D-9">
+						<pre>
+	$ npm install g-scroll --save
+
+	or with CDN
+
+	https://cdn.rawgit.com/GA-MO/g-hover/238cab33/lib/g-scroll.js
+						</pre>
+					</div>
+				</div>
+			</div>
+			<!-- 	CODE -->
+		</div>
+	</section>
+	<section class="section">
+		<div class="center">
+			<div class="title">Properties</div>
+			<p>Setup with these properties.</p>
+			<br>
+			<!-- 	CODE -->
+			<div class="container">
+				<div class="row columns-center">
+					<div class="D-9">
+						<pre>
+	selector: '.element',           // Class name for trigger
+	offset: 10,                     // Offset point for trigger
+	delay: 0.5,                     // Time delay before call action
+	action: function(selector) {
+
+		// this function will trigger when DOM in viewpoit
+		// (selector) is current DOM in viewpoit
+		// can use (selector) make a great thing with your favorite lib.
+
+	}
+
+
+
+
+	// Set up properties
+	var dataScroll = [
+	  {
+	    selector: '.element1',
+	    offset: 10,
+	    delay: 0.5,
+	    action: function(selector) {
+	      TweenMax.from(selector, 0.3, { y:100, opacity: 0 });
+	    }
+	  },
+	  {
+	    selector: '.element2',
+	    offset: 10,
+	    delay: 0.5,
+	    action: function(selector) {
+	      alert('Trigger me');
+	      $(selector).addClass('animated');
+	    }
+	  }
+	];
+
+	// Use
+	GScrolling(dataScroll);
+						</pre>
+					</div>
+				</div>
+			</div>
+			<!-- 	CODE -->
+		</div>
+	</section>
+
+	<script src="scripts/g-scroll.js"></script>
+	<script>
+		// Setup
+		var settings = [
+			{
+				selector: '.box',
+				offset: 10,
+				// delay: 0,
+				action: (selector) => {
+					TweenMax.from(selector, 0.3, { y:100, opacity: 0 });
+				}
+			},
+			{
+				selector: '.fadeInUp',
+				offset: 30,
+				action: (selector) => {
+					TweenMax.from(selector, 2, { y:200, rotationX:-360, rotationY:360, scale:5, opacity:0, rotation: 180 });
+				}
+			},
+			{
+				selector: '.fadeInLeft',
+				offset: 30,
+				action: (selector) => {
+					TweenMax.from(selector, 2, { x:-100, opacity: 0 });
+				}
+			},
+			{
+				selector: '.fadeInRight',
+				offset: 130,
+				action: (selector) => {
+					TweenMax.from(selector, 2, { x:100, opacity: 0 });
+				}
+			},
+			{
+				selector: '.title',
+				offset: 30,
+				action: (selector) => {
+					selector.classList.add('reveal');
+				}
+			}
+		];
+		
+		// Use
+		GScroll(settings);
+	</script>
+</body>
+</html>

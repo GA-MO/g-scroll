@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>GScroll</title>
+	<meta name="description" content="GScroll is a lightweight javascript tool to trigger a function when you scroll to a DOM.">
+	<meta property="og:image" content="https://s27.postimg.org/iza8forqn/ghover.jpg">
+	<link rel="stylesheet" type="text/css" href="styles/demo-layout.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+</head>
+<body>
+	<section class="section">
+		<div class="center">
+			<div class="title">With TweenMax.js</div>
+			<div class="item-animated tween1"></div>
+			<div class="item-animated tween2"></div>
+			<div class="item-animated tween3"></div>
+			<!-- 	CODE -->
+			<div class="container">
+				<div class="row columns-center">
+					<div class="D-9">
+						<pre>
+        action: function(selector) {
+          TweenMax.from(selector, 0.3, { x:100, opacity: 0 });
+        }
+						</pre>
+					</div>
+				</div>
+			</div>
+			<!-- 	CODE -->
+		</div>
+	</section>
+	<section class="section">
+		<div class="center">
+			<div class="title">With velocity.js</div>
+			<div class="item-animated velocity"></div>
+			<!-- 	CODE -->
+			<div class="container">
+				<div class="row columns-center">
+					<div class="D-9">
+						<pre>
+        action: function(selector) {
+          $(selector)
+          .velocity({ x: "+=200", y: "25%" })
+          .velocity({ height: 150, width: 150 })
+          .velocity({ rotateZ: 360, scale: 1.5 })
+          .velocity("reverse", { delay: 550 }); 
+        }
+						</pre>
+					</div>
+				</div>
+			</div>
+			<!-- 	CODE -->
+		</div>
+	</section>
+  <section class="section">
+		<div class="center">
+			<div class="title">With animated.css</div>
+			<div class="item-animated animate"></div>
+			<!-- 	CODE -->
+			<div class="container">
+				<div class="row columns-center">
+					<div class="D-9">
+						<pre>
+        action: function(selector) {
+          $(selector).addClass('animated fadeInLeft');
+        }
+						</pre>
+					</div>
+				</div>
+			</div>
+			<!-- 	CODE -->
+		</div>
+	</section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="http://velocityjs.org/build/jquery.velocity.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+	<script src="scripts/g-scroll.js"></script>
+	<script>
+		// Setup
+		var settings = [
+			{
+				selector: '.tween1',
+				offset: 10,
+				// delay: 0,
+				action: (selector) => {
+					TweenMax.from(selector, 2, { x:100, opacity: 0 });
+				}
+			},
+      {
+				selector: '.tween2',
+				offset: 10,
+				delay: 0.25,
+				action: (selector) => {
+					TweenMax.from(selector, 2, { x:100, opacity: 0 });
+				}
+			},
+      {
+				selector: '.tween3',
+				offset: 10,
+				delay: 0.5,
+				action: (selector) => {
+					TweenMax.from(selector, 2, { x:100, opacity: 0 });
+				}
+			},
+			{
+				selector: '.velocity',
+				offset: 10,
+				action: (selector) => {
+          $(selector)
+          .velocity({ x: "+=200", y: "25%" })
+          .velocity({ height: 150, width: 150 })
+          .velocity({ rotateZ: 360, scale: 1.5 })
+          .velocity("reverse", { delay: 550 });  
+        }
+			},
+			{
+				selector: '.animate',
+				offset: 30,
+				action: (selector) => {
+					$(selector).addClass('animated fadeInLeft');
+				}
+			},
+			{
+				selector: '.section',
+				offset: 130,
+				action: (selector) => {
+					TweenMax.from(selector, 1, { y:100, opacity: 0 });
+				}
+			},
+		];
+		
+		// Use
+		GScroll(settings);
+	</script>
+</body>
+</html>
