@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>GScroll</title>
 	<meta name="description" content="GScroll is a lightweight javascript tool to trigger a function when you scroll to a DOM.">
-	<meta property="og:image" content="https://s27.postimg.org/iza8forqn/ghover.jpg">
+	<meta property="og:image" content="https://s17.postimg.org/bqtvdsvpb/g_scroll.jpg">
 	<link rel="stylesheet" type="text/css" href="styles/demo-layout.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 </head>
@@ -72,9 +72,34 @@
 			<!-- 	CODE -->
 		</div>
 	</section>
+  <section class="section">
+		<div class="center">
+			<div class="title">With anime.js</div>
+			<div class="item-animated anime"></div>
+			<!-- 	CODE -->
+			<div class="container">
+				<div class="row columns-center">
+					<div class="D-9">
+						<pre>
+        action: function(selector) {
+          anime({
+            targets: selector,
+            translateX: 250,
+            scale: 2,
+            rotate: '1turn'
+          });
+        }
+						</pre>
+					</div>
+				</div>
+			</div>
+			<!-- 	CODE -->
+		</div>
+	</section>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.4.3/velocity.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.0/anime.min.js"></script>
 	<script src="scripts/g-scroll.js"></script>
 	<script>
 		// Setup
@@ -121,6 +146,18 @@
 					$(selector).addClass('animated fadeInLeft');
 				}
 			},
+      {
+        selector: '.anime',
+        offset: 30,
+        action: (selector) => {
+          anime({
+            targets: selector,
+            translateX: 150,
+            scale: 2,
+            rotate: '1turn'
+          });
+        }
+      },
 			{
 				selector: '.section',
 				offset: 130,

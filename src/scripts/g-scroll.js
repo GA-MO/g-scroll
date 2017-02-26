@@ -24,7 +24,7 @@ function GScroll(selector) {
 }
 
 /**
- * Start hover fucntion
+ * Start checkPoint fucntion
  * @param  {Object} selector
  */
 function checkPoint(props) {
@@ -35,9 +35,6 @@ function checkPoint(props) {
 		delay: props.delay || 0,
 		action: props.action || null
 	};
-
-	// Assign custom properties with default properties
-	// const initialState = { defaltProperties, ...props };
 
 	// Trigger point in view
 	initScroll();
