@@ -36,21 +36,21 @@ action: function(selector) {
 // Set up properties
 var dataScroll = [
     {
-    selector: '.element1',
-    offset: 10,
-    delay: 0.5,
-    action: function(selector) {
-        TweenMax.from(selector, 0.3, { y:100, opacity: 0 });
-    }
+        selector: '.element1',
+        offset: 10,
+        delay: 0.5,
+        action: function(selector) {
+            TweenMax.from(selector, 0.3, { y:100, opacity: 0 });
+        }
     },
     {
-    selector: '.element2',
-    offset: 10,
-    delay: 0.5,
-    action: function(selector) {
-        alert('Trigger me');
-        $(selector).addClass('animated');
-    }
+        selector: '.element2',
+        offset: 10,
+        delay: 0.5,
+        action: function(selector) {
+            alert('Trigger me');
+            $(selector).addClass('animated');
+        }
     }
 ];
 
