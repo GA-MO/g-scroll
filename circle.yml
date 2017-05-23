@@ -1,0 +1,16 @@
+machine:
+  timezone: Asia/Tokyo
+  node:
+    version: 6
+dependencies:
+  pre:
+    - npm install
+  cache_directories:
+    - node_modules
+test:
+  override:
+    - npm run build
+general:
+  branches:
+    ignore:
+      - gh-pages # list of branches to ignore
