@@ -1,0 +1,7 @@
+extends:
+  - standard
+parser: babel-eslint
+rules:
+  object-curly-spacing: [ error, always ]
+globals:
+  React: false
