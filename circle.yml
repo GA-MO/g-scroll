@@ -4,13 +4,12 @@ machine:
     version: 6
 dependencies:
   pre:
-    - npm install node-sass -g
-    - npm install
+    # - npm install
   cache_directories:
     - node_modules
 test:
   override:
-    - npm run build
+    # - npm run build
 general:
   branches:
     ignore:
