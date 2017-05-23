@@ -1,5 +1,5 @@
 # GScroll
-#####GScroll is a lightweight javascript tool to trigger a function when you scroll to a DOM.
+##### GScroll is a lightweight javascript tool to trigger a function when you scroll to a DOM.
 [Live demo](https://ga-mo.github.io/g-scroll/demo/)
 
 ## Getting started
@@ -55,5 +55,5 @@ var dataScroll = [
 ];
 
 // Use
-GScrolling(dataScroll);
+GScroll(dataScroll);
 ```
